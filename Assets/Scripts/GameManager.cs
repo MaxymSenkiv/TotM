@@ -18,6 +18,6 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         movement.enabled = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
