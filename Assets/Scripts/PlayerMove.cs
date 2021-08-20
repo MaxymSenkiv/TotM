@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Vector3 direction = Vector3.zero;
     [SerializeField] private Tilemap _tilemap;
-    private int _score = 0;
+    [SerializeField] private TextMeshProUGUI _score_counter;
+    public int _score = 0;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -68,11 +70,16 @@ public class PlayerMove : MonoBehaviour
                 break;
             case "Coin":
                 _score++;
-                Vector3Int Tile = new Vector3Int (Mathf.RoundToInt(this.transform.position.x + direction.x / 2), Mathf.RoundToInt(this.transform.position.y + direction.y / 2),
-                    Mathf.RoundToInt(this.transform.position.z + direction.z / 2));
-                _tilemap.SetTile((Tile), null);
-                Debug.Log(Tile);
+                CoinCollision();
                 break;
         }
+    }
+    private void CoinCollision()
+    {
+        Vector3Int Tile = new Vector3Int(Mathf.RoundToInt(this.transform.position.x + direction.x / 2), Mathf.RoundToInt(this.transform.position.y + direction.y / 2),
+                    Mathf.RoundToInt(this.transform.position.z + direction.z / 2));
+        _tilemap.SetTile((Tile), null);
+        Debug.Log(Tile);
+        _score_counter.text = "Score: " + _score.ToString();
     }
 }
