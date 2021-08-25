@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Spike
+  m_Name: TOTM_Trap_3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 5102e67057a520f459ced8af48a8dea0, type: 3}
-  m_Color: {r: 0.9811321, g: 0, b: 0.1962267, a: 1}
+  m_Sprite: {fileID: -3289152508120456185, guid: a0875348596260c4592f8cdb487da4ac,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0

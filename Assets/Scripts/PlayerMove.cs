@@ -10,13 +10,13 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private GameManager gm;
     [SerializeField] private float speed;
     [SerializeField] private Vector3 direction = Vector3.zero;
-    [SerializeField] private Tilemap _tilemap;
+    [SerializeField] private Tilemap _tilemap_coins;
     [SerializeField] private TextMeshProUGUI _score_counter;
     public int _score = 0;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _tilemap.SetTile(new Vector3Int(0, -1, 0), null);
+        _tilemap_coins.SetTile(new Vector3Int(0, -1, 0), null);
     }
 
     private void Update()
@@ -78,7 +78,7 @@ public class PlayerMove : MonoBehaviour
     {
         Vector3Int Tile = new Vector3Int(Mathf.RoundToInt(this.transform.position.x + direction.x / 2), Mathf.RoundToInt(this.transform.position.y + direction.y / 2),
                     Mathf.RoundToInt(this.transform.position.z + direction.z / 2));
-        _tilemap.SetTile((Tile), null);
+        _tilemap_coins.SetTile((Tile), null);
         Debug.Log(Tile);
         _score_counter.text = "Score: " + _score.ToString();
     }

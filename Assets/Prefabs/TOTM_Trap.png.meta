@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: e2df6e2cc0ea60143975d9d9c5e16781
+guid: a0875348596260c4592f8cdb487da4ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2827765927495229226
-    second: TOTM_movable_spikes_0
+      213: -5716708695245017692
+    second: TOTM_Trap_0
   - first:
-      213: 2697618576301776402
-    second: TOTM_movable_spikes_1
+      213: -197387204391068780
+    second: TOTM_Trap_1
   - first:
-      213: -3121373016664204270
-    second: TOTM_movable_spikes_2
+      213: 5747234557760032420
+    second: TOTM_Trap_2
+  - first:
+      213: -3289152508120456185
+    second: TOTM_Trap_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -54,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 14
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,13 +99,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TOTM_movable_spikes_0
+      name: TOTM_Trap_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 14
-        height: 14
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,20 +113,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2f5e40012e3e3720800000000000000
-      internalID: 2827765927495229226
+      spriteID: 4ada887eabb2aa0b0800000000000000
+      internalID: -5716708695245017692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TOTM_movable_spikes_1
+      name: TOTM_Trap_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 14
-        height: 14
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21e56f37dcddf6520800000000000000
-      internalID: 2697618576301776402
+      spriteID: 49b1017226db24df0800000000000000
+      internalID: -197387204391068780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TOTM_movable_spikes_2
+      name: TOTM_Trap_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 14
-        height: 14
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +155,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21c9d3277c7aea4d0800000000000000
-      internalID: -3121373016664204270
+      spriteID: 4aec220516742cf40800000000000000
+      internalID: 5747234557760032420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOTM_Trap_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704256578359a52d0800000000000000
+      internalID: -3289152508120456185
       vertices: []
       indices: 
       edges: []
@@ -161,7 +185,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: db4ab0de20075024f82c81e198cac7af
+    spriteID: e2bec47a23eb8d741ab31b5e6dcb542e
     internalID: 0
     vertices: []
     indices: 
