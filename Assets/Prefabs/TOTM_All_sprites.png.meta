@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: -4405932343762292108
     second: TOTM_All_sprites_34
+  - first:
+      213: -568605326808295620
+    second: TOTM_All_sprites_35
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -172,14 +175,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 128
+        y: 125
         width: 16
-        height: 4
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -7, y: -7}
+        - {x: -7, y: -4}
+        - {x: 7, y: -4}
+        - {x: 7, y: -7}
       tessellationDetail: 0
       bones: []
       spriteID: 0b0fa8a709bb14f80800000000000000
@@ -192,15 +199,19 @@ TextureImporter:
       name: TOTM_All_sprites_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 61
         y: 128
-        width: 4
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -7, y: -7}
+        - {x: -7, y: 7}
+        - {x: -4, y: 7}
+        - {x: -4, y: -7}
       tessellationDetail: 0
       bones: []
       spriteID: 719ae1e44da9dcfe0800000000000000
@@ -213,15 +224,19 @@ TextureImporter:
       name: TOTM_All_sprites_5
       rect:
         serializedVersion: 2
-        x: 108
+        x: 99
         y: 128
-        width: 4
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 4, y: -7}
+        - {x: 4, y: 7}
+        - {x: 7, y: 7}
+        - {x: 7, y: -7}
       tessellationDetail: 0
       bones: []
       spriteID: cdd799fd93d2575b0800000000000000
@@ -835,6 +850,31 @@ TextureImporter:
       bones: []
       spriteID: 472f4a180ebfad2c0800000000000000
       internalID: -4405932343762292108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOTM_All_sprites_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 131
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -7, y: 4}
+        - {x: -7, y: 7}
+        - {x: 7, y: 7}
+        - {x: 7, y: 4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c375236c778eb18f0800000000000000
+      internalID: -568605326808295620
       vertices: []
       indices: 
       edges: []

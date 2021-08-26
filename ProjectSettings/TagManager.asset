@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Wall
   - Coin
+  - BigCoin
   layers:
   - Default
   - TransparentFX
