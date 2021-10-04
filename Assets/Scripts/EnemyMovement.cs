@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -9,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Vector3 _end_position;
     [SerializeField] private float _speed;
     private bool _can_move = true;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();

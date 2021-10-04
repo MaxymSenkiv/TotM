@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 using TMPro;
 
@@ -13,7 +11,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Tilemap _tilemap_small_coins;
     [SerializeField] private Tilemap _tilemap_big_coins;
     [SerializeField] private TextMeshProUGUI _score_counter;
+
     public int _score = 0;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();

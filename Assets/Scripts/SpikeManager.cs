@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpikeManager : MonoBehaviour
 {
-    [SerializeField] private SpikeMovement Spike;
+    [SerializeField] private SpikeMovement _spike;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            Spike.StartCoroutine("SpikeMove");
+            _spike.StartCoroutine("SpikeMove");
         }
     }
 }
