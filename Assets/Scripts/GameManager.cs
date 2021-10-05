@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]  private PlayerMove movement;
+    [SerializeField] private PlayerMove _movement;
 
-    [SerializeField] private float RestartDelay = 1f;
+    [SerializeField] private float _restartDelay = 1f;
 
     public void GameOver()
     {
-        movement.enabled = false;
+        _movement.enabled = false;
 
         Debug.Log("GAME OVER");
 
-        Invoke("Restart", RestartDelay);
+        Invoke("Restart", _restartDelay);
     }
 
     void Restart()
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        movement.enabled = false;
+        _movement.enabled = false;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

@@ -3,35 +3,40 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private Rigidbody2D _rigidbody;
-    private Vector3 _start_position;
-    [SerializeField] private Vector3 _end_position;
+    private Vector3 _startPosition;
+
+    [SerializeField] private Vector3 _endPosition;
+
     [SerializeField] private float _speed;
-    private bool _can_move = true;
+
+    private bool _canMove = true;
 
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        _start_position = transform.position;
+        _startPosition = transform.position;
     }
 
     private void FixedUpdate()
     {
-        if (_can_move == true)
-            transform.position = Vector3.MoveTowards(transform.position, _end_position, _speed * Time.deltaTime);
-        if (transform.position == _end_position)
+        if (_canMove == true)
+            transform.position = Vector3.MoveTowards(transform.position, _endPosition, _speed * Time.deltaTime);
+
+        if (transform.position == _endPosition)
         {
-            _end_position = _start_position;
-            _start_position = transform.position;
+            _endPosition = _startPosition;
+
+            _startPosition = transform.position;
+
             StartCoroutine("EnemyStay");
         }
     }
 
     IEnumerator EnemyStay()
     {
-        _can_move = false;
+        _canMove = false;
         yield return new WaitForSeconds(1f);
-        _can_move = true;
+
+        _canMove = true;
         yield return null;
     }
 }

@@ -1,60 +1,62 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
-using TMPro;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private GameManager gm;
-    [SerializeField] private float speed;
-    [SerializeField] private Vector3 direction = Vector3.zero;
-    [SerializeField] private Tilemap _tilemap_small_coins;
-    [SerializeField] private Tilemap _tilemap_big_coins;
-    [SerializeField] private TextMeshProUGUI _score_counter;
+    [SerializeField] private GameManager _gm;
 
-    public int _score = 0;
+    [SerializeField] private Rigidbody2D _rigidbody;
+
+    [SerializeField] private Vector3 _direction = Vector3.zero;
+
+    [SerializeField] private float _speed;
+
+    [SerializeField] private Tilemap _tilemapSmallCoins;
+    [SerializeField] private Tilemap _tilemapBigCoins;
+
+    [SerializeField] private ScoreCounter _scoreCounter;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _tilemap_small_coins.SetTile(new Vector3Int(0, -1, 0), null);
     }
 
     private void Update()
     {
-        if(direction == Vector3.zero)
+        if(_direction == Vector3.zero)
         {
             if (Input.GetAxis("Horizontal") > 0f)
             {
-                direction = Vector3.right; 
+                _direction = Vector3.right; 
             }
             if (Input.GetAxis("Horizontal") < 0f)
             {
-                direction = Vector3.left;
+                _direction = Vector3.left;
             }
             if (Input.GetAxis("Vertical") > 0f)
             {
-                direction = Vector3.up;
+                _direction = Vector3.up;
             } 
             if (Input.GetAxis("Vertical") < 0f)
             {
-                direction = Vector3.down;
+                _direction = Vector3.down;
             }
         }
     }
 
     private void FixedUpdate()
     {
-        if (Physics2D.Raycast(transform.position, direction, 0.6f))
+        if (Physics2D.Raycast(transform.position, _direction, 0.6f))
         {
-            direction = Vector3.zero;
+            _direction = Vector3.zero;
             this.transform.position = new Vector3(
                 Mathf.Round(this.transform.position.x),
                 Mathf.Round(this.transform.position.y),
                 0.0f
                 );
         }
-        _rigidbody.velocity = direction * speed * Time.fixedDeltaTime;
+
+        _rigidbody.velocity = _direction * _speed * Time.fixedDeltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,36 +65,36 @@ public class PlayerMove : MonoBehaviour
         {
             case "Obstacle":
                 _rigidbody.velocity = Vector3.zero;
-                gm.GameOver();
+                _gm.GameOver();
                 break;
             case "End":
                 _rigidbody.velocity = Vector3.zero;
-                gm.NextLevel();
+                _gm.NextLevel();
                 break;
             case "Coin":
-                _score++;
+                _scoreCounter.ChangeScore(1);
                 SmallCoinCollision();
                 break;
             case "BigCoin":
-                _score+=10;
+                _scoreCounter.ChangeScore(10);
                 BigCoinCollision();
                 break;
         }
     }
+
     private void SmallCoinCollision()
     {
-        Vector3Int Tile = new Vector3Int(Mathf.RoundToInt(this.transform.position.x + direction.x / 2)-1, Mathf.RoundToInt(this.transform.position.y + direction.y / 2)-1,
-                    Mathf.RoundToInt(this.transform.position.z + direction.z / 2));
-        _tilemap_small_coins.SetTile((Tile), null);
-        Debug.Log(Tile);
-        _score_counter.text = "Score: " + _score.ToString();
+        var Tile = new Vector3Int(Mathf.RoundToInt(this.transform.position.x + _direction.x / 2)-1, 
+                                        Mathf.RoundToInt(this.transform.position.y + _direction.y / 2)-1,
+                                        Mathf.RoundToInt(this.transform.position.z + _direction.z / 2));
+        _tilemapSmallCoins.SetTile((Tile), null);
     }
+
     private void BigCoinCollision()
     {
-        Vector3Int Tile = new Vector3Int(Mathf.RoundToInt(this.transform.position.x + direction.x / 2)-1, Mathf.RoundToInt(this.transform.position.y + direction.y / 2)-1,
-                    Mathf.RoundToInt(this.transform.position.z + direction.z / 2));
-        _tilemap_big_coins.SetTile((Tile), null);
-        Debug.Log(Tile);
-        _score_counter.text = "Score: " + _score.ToString();
+        var Tile = new Vector3Int(Mathf.RoundToInt(this.transform.position.x + _direction.x / 2)-1, 
+                                        Mathf.RoundToInt(this.transform.position.y + _direction.y / 2)-1,
+                                        Mathf.RoundToInt(this.transform.position.z + _direction.z / 2));
+        _tilemapBigCoins.SetTile((Tile), null);
     }
 }

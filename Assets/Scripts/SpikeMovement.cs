@@ -3,18 +3,16 @@ using UnityEngine;
 
 public class SpikeMovement : MonoBehaviour
 {
-    BoxCollider2D Collider;
+    [SerializeField] private Animator _animator;
 
-    [SerializeField] private Animator animator;
-
-    [SerializeField] private float Time = 4f;
+    [SerializeField] private float _time = 4f;
 
     IEnumerator SpikeMove()
     {
-        animator.Play("SpikeTrap");
-        yield return new WaitForSeconds(Time);
+        _animator.Play("SpikeTrap");
+        yield return new WaitForSeconds(_time);
 
-        animator.Play("IdleTrap");
+        _animator.Play("IdleTrap");
         yield return null;
     }
 }
