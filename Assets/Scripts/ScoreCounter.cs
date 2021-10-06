@@ -15,7 +15,6 @@ public class ScoreCounter : MonoBehaviour
     public void ChangeScore(int addition)
     {
         Score += addition;
-
         _scoreCounter.SetText("Score: {0}", Score);
     }
 }

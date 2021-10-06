@@ -10,9 +10,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         _movement.enabled = false;
-
         Debug.Log("GAME OVER");
-
         Invoke("Restart", _restartDelay);
     }
 
@@ -24,7 +22,6 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         _movement.enabled = false;
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

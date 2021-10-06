@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreCounter: {fileID: 0}
-  Player: {fileID: 3705072155962294672}
+  Score: 0
 --- !u!1 &656861390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,8 +2229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534a52a7f47f1dd45b6dbf6f8497d93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 3705072155962294672}
-  RestartDelay: 1
+  _movement: {fileID: 0}
+  _restartDelay: 1
 --- !u!4 &692513847
 Transform:
   m_ObjectHideFlags: 0
@@ -3012,6 +3012,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &1909919475 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8183129504747911682, guid: 48b95c7cfc806f04d984806e3285cf9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8183129505797143326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &486221237525866266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3023,6 +3029,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 486221236816900730, guid: bc35b7a512bd80940a0048f059686e03,
+        type: 3}
+      propertyPath: _endPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 486221236816900730, guid: bc35b7a512bd80940a0048f059686e03,
+        type: 3}
+      propertyPath: _endPosition.y
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 486221236816900734, guid: bc35b7a512bd80940a0048f059686e03,
         type: 3}
@@ -3355,7 +3371,6 @@ MonoBehaviour:
   _tilemapSmallCoins: {fileID: 82169011}
   _tilemapBigCoins: {fileID: 1075323375}
   _scoreCounter: {fileID: 245495005}
-  Score: 0
 --- !u!1001 &8183129505797143326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3363,6 +3378,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8183129504747911680, guid: 48b95c7cfc806f04d984806e3285cf9f,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1909919475}
     - target: {fileID: 8183129505789591784, guid: 48b95c7cfc806f04d984806e3285cf9f,
         type: 3}
       propertyPath: m_RootOrder

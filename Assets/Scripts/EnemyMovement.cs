@@ -20,13 +20,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if (_canMove == true)
             transform.position = Vector3.MoveTowards(transform.position, _endPosition, _speed * Time.deltaTime);
-
         if (transform.position == _endPosition)
         {
             _endPosition = _startPosition;
-
             _startPosition = transform.position;
-
             StartCoroutine("EnemyStay");
         }
     }

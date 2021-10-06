@@ -55,7 +55,6 @@ public class PlayerMove : MonoBehaviour
                 0.0f
                 );
         }
-
         _rigidbody.velocity = _direction * _speed * Time.fixedDeltaTime;
     }
 
@@ -85,16 +84,16 @@ public class PlayerMove : MonoBehaviour
     private void SmallCoinCollision()
     {
         var Tile = new Vector3Int(Mathf.RoundToInt(this.transform.position.x + _direction.x / 2)-1, 
-                                        Mathf.RoundToInt(this.transform.position.y + _direction.y / 2)-1,
-                                        Mathf.RoundToInt(this.transform.position.z + _direction.z / 2));
+                                    Mathf.RoundToInt(this.transform.position.y + _direction.y / 2)-1,
+                                    Mathf.RoundToInt(this.transform.position.z + _direction.z / 2));
         _tilemapSmallCoins.SetTile((Tile), null);
     }
 
     private void BigCoinCollision()
     {
         var Tile = new Vector3Int(Mathf.RoundToInt(this.transform.position.x + _direction.x / 2)-1, 
-                                        Mathf.RoundToInt(this.transform.position.y + _direction.y / 2)-1,
-                                        Mathf.RoundToInt(this.transform.position.z + _direction.z / 2));
+                                    Mathf.RoundToInt(this.transform.position.y + _direction.y / 2)-1,
+                                    Mathf.RoundToInt(this.transform.position.z + _direction.z / 2));
         _tilemapBigCoins.SetTile((Tile), null);
     }
 }
