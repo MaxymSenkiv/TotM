@@ -5,7 +5,7 @@ public class SpikeMovement : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
-    [SerializeField] private float _time = 4f;
+    [SerializeField] private float _time = 2.5f;
 
     IEnumerator SpikeMove()
     {

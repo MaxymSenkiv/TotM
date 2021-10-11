@@ -68,7 +68,7 @@ public class PlayerMove : MonoBehaviour
                 break;
             case "End":
                 _rigidbody.velocity = Vector3.zero;
-                _gm.NextLevel();
+                _gm.LoadNextLevel();
                 break;
             case "Coin":
                 _scoreCounter.ChangeScore(1);
