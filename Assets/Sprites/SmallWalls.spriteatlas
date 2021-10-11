@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SmallWalls
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -3255091526087077383, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: -2369615202857286375, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: 6411715842866238829, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: 5353066506873046404, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: -6830080371641549322, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: 6701713218713401568, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: -9099603730411994156, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: -5193742850863484490, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: -7882765028084235282, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: -4071199706236918401, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: 5702308653107301895, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  - {fileID: -39921798595915885, guid: ec813fff3dd15824097223918a7efdcd, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TOTM_Small_Walls_11
+  - TOTM_Small_Walls_10
+  - TOTM_Small_Walls_8
+  - TOTM_Small_Walls_9
+  - TOTM_Small_Walls_6
+  - TOTM_Small_Walls_7
+  - TOTM_Small_Walls_4
+  - TOTM_Small_Walls_5
+  - TOTM_Small_Walls_2
+  - TOTM_Small_Walls_3
+  - TOTM_Small_Walls_0
+  - TOTM_Small_Walls_1
+  m_Tag: SmallWalls
+  m_IsVariant: 0
