@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_canMove == true)
+        if (_canMove)
             transform.position = Vector3.MoveTowards(transform.position, _endPosition, _speed * Time.deltaTime);
         if (transform.position == _endPosition)
         {
