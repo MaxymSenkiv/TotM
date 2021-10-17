@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class SpikeMovement : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    private Animator _animator;
 
     private float _time = 2.5f;
+
+    void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     IEnumerator SpikeMove()
     {

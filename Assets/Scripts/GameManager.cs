@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _winMenuUI;
     [SerializeField] private GameObject _loseMenuUI;
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     public void GameOver()
     {
         _movement.enabled = false;
@@ -27,8 +32,13 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         _movement.enabled = false;
-        _winMenuUI.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Win()
+    {
+        Time.timeScale = 0;
+        _winMenuUI.SetActive(true);
     }
 
     public void Quit()
