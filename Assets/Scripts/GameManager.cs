@@ -1,10 +1,10 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private PlayerMove _movement;
-
     [SerializeField] private GameObject _winMenuUI;
     [SerializeField] private GameObject _loseMenuUI;
 
@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void GameOver()
+    IEnumerator GameOver()
     {
-        _movement.enabled = false;
+        yield return new WaitForSeconds(1.5f);
         _loseMenuUI.SetActive(true);
     }
 
@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        _movement.enabled = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

@@ -18,6 +18,10 @@ public class PlayerMove : MonoBehaviour
 
     private Animator _animator;
 
+    public bool Dead = false;
+
+    [SerializeField] private GameObject _deathParticle;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -49,26 +53,27 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Physics2D.Raycast(transform.position, _direction, 0.7f))
+        if(!Dead)
         {
-            _direction = Vector3.zero;
-            this.transform.position = new Vector3(
-                Mathf.Round(this.transform.position.x),
-                Mathf.Round(this.transform.position.y),
-                0.0f
-                );
-            _animator.Play("IdlePlayer");
-        }
-        _rigidbody.velocity = _direction * _speed * Time.fixedDeltaTime;
-        if (_direction == Vector3.left || _direction == Vector3.right)
-        {
-            //ScaleHorizontalPlayer();
-            _animator.Play("VerticalCompression");
-        }
-        if (_direction == Vector3.up || _direction == Vector3.down)
-        {
-            //ScaleVerticalPlayer();
-            _animator.Play("HorizontalCompression");
+            if (Physics2D.Raycast(transform.position, _direction, 0.7f))
+            {
+                _direction = Vector3.zero;
+                this.transform.position = new Vector3(
+                    Mathf.Round(this.transform.position.x),
+                    Mathf.Round(this.transform.position.y),
+                    0.0f
+                    );
+                _animator.Play("IdlePlayer");
+            }
+            _rigidbody.velocity = _direction * _speed * Time.fixedDeltaTime;
+            if (_direction == Vector3.left || _direction == Vector3.right)
+            {
+                _animator.Play("VerticalCompression");
+            }
+            if (_direction == Vector3.up || _direction == Vector3.down)
+            {
+                _animator.Play("HorizontalCompression");
+            }
         }
     }
 
@@ -78,7 +83,7 @@ public class PlayerMove : MonoBehaviour
         {
             case "Obstacle":
                 _rigidbody.velocity = Vector3.zero;
-                _gm.GameOver();
+                Death();
                 break;
             case "End":
                 _rigidbody.velocity = Vector3.zero;
@@ -114,20 +119,16 @@ public class PlayerMove : MonoBehaviour
         _tilemapBigCoins.SetTile((Tile), null);
     }
 
-    private void ScaleVerticalPlayer()
-    {
-        Vector3 compressedVector = new Vector3(0.7f, 1.3f, 1.0f);
-        transform.localScale = Vector3.Lerp(new Vector3(1.0f, 1.0f, 1.0f), compressedVector, 1);
-    }
-    private void ScaleHorizontalPlayer()
-    {
-        Vector3 compressedVector = new Vector3(1.3f, 0.7f, 1.0f);
-        transform.localScale = Vector3.Lerp(new Vector3(1.0f, 1.0f, 1.0f), compressedVector, 1);
-    }
     private void ScaleNormalPlayer()
     {
         Vector3 normalSize = new Vector3(1f, 1f, 1f);
         transform.localScale = Vector3.Lerp(transform.localScale, normalSize, 1);
     }
 
+    private void Death()
+    {
+        Dead = true;
+        _animator.Play("PlayerDeath");
+        _gm.StartCoroutine("GameOver");
+    }
 }
