@@ -82,11 +82,9 @@ public class PlayerMove : MonoBehaviour
         switch (collision.tag)
         {
             case "Obstacle":
-                _rigidbody.velocity = Vector3.zero;
                 Death();
                 break;
             case "End":
-                _rigidbody.velocity = Vector3.zero;
                 _gm.Win();
                 break;
             case "Coin":
@@ -127,6 +125,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Death()
     {
+        _rigidbody.velocity = Vector3.zero;
         Dead = true;
         _animator.Play("PlayerDeath");
         _gm.StartCoroutine("GameOver");
